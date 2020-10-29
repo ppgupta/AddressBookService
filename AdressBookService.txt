@@ -263,3 +263,33 @@ mysql> select Type, count(*) as 'Number of Contact Persons' from address_book  g
 | Friends |                         5 |
 +---------+---------------------------+
 2 rows in set (0.03 sec)
+
+// UC 11 - Adding person to both Friend and Family.
+
+// Inserting data into the address_book table
+mysql> insert into address_book values
+    -> ('East','Friend', 'Rohit','Mishra','jaynagar','Madhubani','Bihar','367324','9876543211','rohit@gmail.com'),
+    -> ('North','Friend', 'Nidhi','singh','AFS','Patiala','Punjab','567982','9123589669','nidhi@gmail.com'),
+    -> ('South','Friend', 'Radhika','Reddy','Gadkhol','Salem','T.N.','879032','7546908723','radhika@gmail.com');
+Query OK, 3 rows affected (0.17 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+// Retrieving all the entires from the address_book table
+
+
+mysql> select * from address_book;
++-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| AddressBookName | Type    | Firstname | LastName  | Address      | City        | State     | Zip    | PhoneNumber | Email                |
++-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| west            | Family  | Sandeep   | sharma    | hanuman      | Ahmedabad   | gujarat   | 395678 | 8456798765  | sandeep@123gmail.com |
+| west            | Friends | Saurabh   | Chaudhary | Talwandi     | vigyannagar | Rajasthan | 345889 | 7689345789  | saur435@gmail.com    |
+| centre          | Friends | Shreya    | kumari    | Gandhinagar  | Indore      | M.P.      | 435768 | 6354326743  | shreya123@gmail.com  |
+| North           | Friends | Punam     | Yadav     | MahavirNagar | Kanpur      | U.P.      | 567432 | 9863485675  | punam32@gmail.com    |
+| centre          | Friends | akash     | Banjare   | Welcomenagar | Raipur      | C.G.      | 435768 | 8679864213  | akash@gmail.com      |
+| East            | Family  | Rishav    | Sharma    | Andara       | Jamshedpur  | Jharkhand | 876532 | 9764326891  | rishav@gmail.com     |
+| North           | Friends | Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
+| East            | Friend  | Rohit     | Mishra    | jaynagar     | Madhubani   | Bihar     | 367324 | 9876543211  | rohit@gmail.com      |
+| North           | Friend  | Nidhi     | singh     | AFS          | Patiala     | Punjab    | 567982 | 9123589669  | nidhi@gmail.com      |
+| South           | Friend  | Radhika   | Reddy     | Gadkhol      | Salem       | T.N.      | 879032 | 7546908723  | radhika@gmail.com    |
++-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+10 rows in set (0.04 sec)
