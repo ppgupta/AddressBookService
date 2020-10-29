@@ -252,3 +252,14 @@ mysql>  select * from address_book;
 | North           | Friends | Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
 +-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
 7 rows in set (0.00 sec)
+
+// UC 10 - Getting the number of contact persons
+
+mysql> select Type, count(*) as 'Number of Contact Persons' from address_book  group by type;
++---------+---------------------------+
+| Type    | Number of Contact Persons |
++---------+---------------------------+
+| Family  |                         2 |
+| Friends |                         5 |
++---------+---------------------------+
+2 rows in set (0.03 sec)
