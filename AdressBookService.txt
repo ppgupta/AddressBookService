@@ -112,3 +112,24 @@ mysql>  select *from address_book;
 | Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
 +-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
 8 rows in set (0.03 sec)
+
+
+// UC5 - Deleting a person using person's name.
+
+mysql> delete from address_book where  Firstname='Akash' and LastName='Gupta';
+Query OK, 1 row affected (0.15 sec)
+//updated table
+
+mysql>  select *from address_book;
++-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| Firstname | LastName  | Address      | City        | State     | Zip    | PhoneNumber | Email                |
++-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| Sandeep   | sharma    | hanuman      | Ahmedabad   | gujarat   | 395678 | 8456798765  | sandeep@123gmail.com |
+| Saurabh   | Chaudhary | Talwandi     | vigyannagar | Rajasthan | 345889 | 7689345789  | saur435@gmail.com    |
+| Shreya    | kumari    | Gandhinagar  | Indore      | M.P.      | 435768 | 6354326743  | shreya123@gmail.com  |
+| Punam     | Yadav     | MahavirNagar | Kanpur      | U.P.      | 567432 | 9863485675  | punam32@gmail.com    |
+| akash     | Banjare   | Welcomenagar | Raipur      | C.G.      | 435768 | 8679864213  | akash@gmail.com      |
+| Rishav    | Sharma    | Andara       | Jamshedpur  | Jharkhand | 876532 | 9764326891  | rishav@gmail.com     |
+| Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
++-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+7 rows in set (0.07 sec)
