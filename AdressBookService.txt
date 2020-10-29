@@ -19,3 +19,44 @@ mysql> show databases;
 | world                |
 +----------------------+
 8 rows in set (0.10 sec)
+
+//UC2
+
+mysql> use address_book_service;
+Database changed
+mysql> select database();
++----------------------+
+| database()           |
++----------------------+
+| address_book_service |
++----------------------+
+1 row in set (0.00 sec)
+
+//create address book table
+mysql> create table address_book();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> create table address_book(Firstname varchar(50) not null,
+    -> LastName varchar(50) not null,
+    -> Address varchar(100) not null,
+    -> City varchar(50) not null,
+    -> State varchar(50) not null,
+    -> Zip varchar(6) not null,
+    -> PhoneNumber varchar(10) not null,
+    -> Email varchar(80) not null);
+Query OK, 0 rows affected (4.19 sec)
+
+//show structure of table
+mysql> desc address_book;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| Firstname   | varchar(50)  | NO   |     | NULL    |       |
+| LastName    | varchar(50)  | NO   |     | NULL    |       |
+| Address     | varchar(100) | NO   |     | NULL    |       |
+| City        | varchar(50)  | NO   |     | NULL    |       |
+| State       | varchar(50)  | NO   |     | NULL    |       |
+| Zip         | varchar(6)   | NO   |     | NULL    |       |
+| PhoneNumber | varchar(10)  | NO   |     | NULL    |       |
+| Email       | varchar(80)  | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.20 sec)
