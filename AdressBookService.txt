@@ -172,3 +172,12 @@ mysql> select State,count(*) as 'Size of Address Book' from address_book group b
 | Haryana   |                    1 |
 +-----------+----------------------+
 7 rows in set (0.00 sec)
+
+//UC8 soted alphabetically for a given city
+mysql> select * from address_book where city='Kanpur' order by Firstname,LastName;
++-----------+----------+--------------+--------+-------+--------+-------------+-------------------+
+| Firstname | LastName | Address      | City   | State | Zip    | PhoneNumber | Email             |
++-----------+----------+--------------+--------+-------+--------+-------------+-------------------+
+| Punam     | Yadav    | MahavirNagar | Kanpur | U.P.  | 567432 | 9863485675  | punam32@gmail.com |
++-----------+----------+--------------+--------+-------+--------+-------------+-------------------+
+1 row in set (0.05 sec)
