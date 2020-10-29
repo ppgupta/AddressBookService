@@ -60,3 +60,33 @@ mysql> desc address_book;
 | Email       | varchar(80)  | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.20 sec)
+
+//UC3 insert into table
+mysql>  insert into address_book values
+    -> ('Akash', 'Gupta', 'ONGC', 'Surat', 'Guj.', '392010', '8460243763', 'prem@gmail.com'),
+    -> ('Sandeep','sharma','hanuman','miranagar','gujarat','393010','8456798765','sandeep@123gmail.com'),
+    -> ('Saurabh','Chaudhary','Talwandi','vigyannagar','Rajasthan','345889','7689345789','saur435@gmail.com'),
+    -> ('Shreya','kumari','Gandhinagar','Indore','M.P.','435768','6354326743','shreya123@gmail.com'),
+    -> ('Punam','Yadav','MahavirNagar','Kanpur','U.P.','567432','9863485675','punam32@gmail.com'),
+    -> ('akash','Banjare','Welcomenagar','Raipur','C.G.','435768','8679864213','akash@gmail.com'),
+    -> ('Rishav','Sharma','Andara','Jamshedpur','Jharkhand','876532','9764326891','rishav@gmail.com'),
+    -> ('Chetan','Agrawal','satelite','Gurugram','Haryana','345678','7654329876','chetan@gmail.com');
+Query OK, 8 rows affected (0.55 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+//retrieving all entries 
+mysql> select *from address_book
+    -> ;
++-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| Firstname | LastName  | Address      | City        | State     | Zip    | PhoneNumber | Email                |
++-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| Akash     | Gupta     | ONGC         | Surat       | Guj.      | 392010 | 8460243763  | prem@gmail.com       |
+| Sandeep   | sharma    | hanuman      | miranagar   | gujarat   | 393010 | 8456798765  | sandeep@123gmail.com |
+| Saurabh   | Chaudhary | Talwandi     | vigyannagar | Rajasthan | 345889 | 7689345789  | saur435@gmail.com    |
+| Shreya    | kumari    | Gandhinagar  | Indore      | M.P.      | 435768 | 6354326743  | shreya123@gmail.com  |
+| Punam     | Yadav     | MahavirNagar | Kanpur      | U.P.      | 567432 | 9863485675  | punam32@gmail.com    |
+| akash     | Banjare   | Welcomenagar | Raipur      | C.G.      | 435768 | 8679864213  | akash@gmail.com      |
+| Rishav    | Sharma    | Andara       | Jamshedpur  | Jharkhand | 876532 | 9764326891  | rishav@gmail.com     |
+| Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
++-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+8 rows in set (0.00 sec)
