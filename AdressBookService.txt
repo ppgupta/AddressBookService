@@ -1,5 +1,6 @@
 
 //UC1
+//create database
 mysql>  create database address_book_service ;
 Query OK, 1 row affected (0.20 sec)
 
