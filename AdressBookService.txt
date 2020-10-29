@@ -133,3 +133,13 @@ mysql>  select *from address_book;
 | Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
 +-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
 7 rows in set (0.07 sec)
+
+//UC6 retriving person belonging to city or state
+mysql> select * from address_book where city = 'Kanpur' or State='gujarat';
++-----------+----------+--------------+-----------+---------+--------+-------------+----------------------+
+| Firstname | LastName | Address      | City      | State   | Zip    | PhoneNumber | Email                |
++-----------+----------+--------------+-----------+---------+--------+-------------+----------------------+
+| Sandeep   | sharma   | hanuman      | Ahmedabad | gujarat | 395678 | 8456798765  | sandeep@123gmail.com |
+| Punam     | Yadav    | MahavirNagar | Kanpur    | U.P.    | 567432 | 9863485675  | punam32@gmail.com    |
++-----------+----------+--------------+-----------+---------+--------+-------------+----------------------+
+2 rows in set (0.00 sec)
