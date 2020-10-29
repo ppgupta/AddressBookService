@@ -181,3 +181,74 @@ mysql> select * from address_book where city='Kanpur' order by Firstname,LastNam
 | Punam     | Yadav    | MahavirNagar | Kanpur | U.P.  | 567432 | 9863485675  | punam32@gmail.com |
 +-----------+----------+--------------+--------+-------+--------+-------------+-------------------+
 1 row in set (0.05 sec)
+
+// UC 9 - Identifying each Address Book with name and Type. 
+//adding addressbookname column at first position
+mysql> alter table address_book add AddressBookName varchar(100) first;
+Query OK, 0 rows affected (4.42 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+//adding type column at second position
+
+mysql> alter table address_book add Type varchar(100) after addressbookname;
+Query OK, 0 rows affected (2.38 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+// Retrieving all the entries from table
+
+mysql> select * from address_book;
++-----------------+------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| AddressBookName | Type | Firstname | LastName  | Address      | City        | State     | Zip    | PhoneNumber | Email                |
++-----------------+------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| NULL            | NULL | Sandeep   | sharma    | hanuman      | Ahmedabad   | gujarat   | 395678 | 8456798765  | sandeep@123gmail.com |
+| NULL            | NULL | Saurabh   | Chaudhary | Talwandi     | vigyannagar | Rajasthan | 345889 | 7689345789  | saur435@gmail.com    |
+| NULL            | NULL | Shreya    | kumari    | Gandhinagar  | Indore      | M.P.      | 435768 | 6354326743  | shreya123@gmail.com  |
+| NULL            | NULL | Punam     | Yadav     | MahavirNagar | Kanpur      | U.P.      | 567432 | 9863485675  | punam32@gmail.com    |
+| NULL            | NULL | akash     | Banjare   | Welcomenagar | Raipur      | C.G.      | 435768 | 8679864213  | akash@gmail.com      |
+| NULL            | NULL | Rishav    | Sharma    | Andara       | Jamshedpur  | Jharkhand | 876532 | 9764326891  | rishav@gmail.com     |
+| NULL            | NULL | Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
++-----------------+------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+7 rows in set (0.00 sec)
+ 
+// Updating the values in AddressBookName column
+
+mysql>  update address_book set addressbookname = 'centre' where State='M.P.';
+Query OK, 1 row affected (0.36 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update address_book set addressbookname = 'North' where State='U.P.';
+Query OK, 1 row affected (0.43 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update address_book set addressbookname = 'centre' where State='C.G.';
+Query OK, 1 row affected (1.36 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update address_book set addressbookname = 'North' where State='Haryana';
+Query OK, 1 row affected (0.27 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update address_book set addressbookname = 'East' where State='Jharkhand';
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+// Updating the values in Type column
+mysql> update address_book set type = 'Family' where lastname = 'sharma';
+Query OK, 2 rows affected (0.13 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql>  update address_book set type = 'Friends' where not lastname = 'sharma';
+Query OK, 5 rows affected (0.11 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql>  select * from address_book;
++-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| AddressBookName | Type    | Firstname | LastName  | Address      | City        | State     | Zip    | PhoneNumber | Email                |
++-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+| west            | Family  | Sandeep   | sharma    | hanuman      | Ahmedabad   | gujarat   | 395678 | 8456798765  | sandeep@123gmail.com |
+| west            | Friends | Saurabh   | Chaudhary | Talwandi     | vigyannagar | Rajasthan | 345889 | 7689345789  | saur435@gmail.com    |
+| centre          | Friends | Shreya    | kumari    | Gandhinagar  | Indore      | M.P.      | 435768 | 6354326743  | shreya123@gmail.com  |
+| North           | Friends | Punam     | Yadav     | MahavirNagar | Kanpur      | U.P.      | 567432 | 9863485675  | punam32@gmail.com    |
+| centre          | Friends | akash     | Banjare   | Welcomenagar | Raipur      | C.G.      | 435768 | 8679864213  | akash@gmail.com      |
+| East            | Family  | Rishav    | Sharma    | Andara       | Jamshedpur  | Jharkhand | 876532 | 9764326891  | rishav@gmail.com     |
+| North           | Friends | Chetan    | Agrawal   | satelite     | Gurugram    | Haryana   | 345678 | 7654329876  | chetan@gmail.com     |
++-----------------+---------+-----------+-----------+--------------+-------------+-----------+--------+-------------+----------------------+
+7 rows in set (0.00 sec)
