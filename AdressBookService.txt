@@ -143,3 +143,32 @@ mysql> select * from address_book where city = 'Kanpur' or State='gujarat';
 | Punam     | Yadav    | MahavirNagar | Kanpur    | U.P.    | 567432 | 9863485675  | punam32@gmail.com    |
 +-----------+----------+--------------+-----------+---------+--------+-------------+----------------------+
 2 rows in set (0.00 sec)
+
+//UC7 Size of address book by city or state
+mysql> select City,count(*) as 'Size of Address Book' from address_book group by city;
++-------------+----------------------+
+| City        | Size of Address Book |
++-------------+----------------------+
+| Ahmedabad   |                    1 |
+| vigyannagar |                    1 |
+| Indore      |                    1 |
+| Kanpur      |                    1 |
+| Raipur      |                    1 |
+| Jamshedpur  |                    1 |
+| Gurugram    |                    1 |
++-------------+----------------------+
+7 rows in set (0.08 sec)
+
+mysql> select State,count(*) as 'Size of Address Book' from address_book group by State;
++-----------+----------------------+
+| State     | Size of Address Book |
++-----------+----------------------+
+| gujarat   |                    1 |
+| Rajasthan |                    1 |
+| M.P.      |                    1 |
+| U.P.      |                    1 |
+| C.G.      |                    1 |
+| Jharkhand |                    1 |
+| Haryana   |                    1 |
++-----------+----------------------+
+7 rows in set (0.00 sec)
